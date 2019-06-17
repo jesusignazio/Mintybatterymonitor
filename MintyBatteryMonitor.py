@@ -28,7 +28,7 @@ GAIN = 1
 def changeicon(percent):
     global iconState
     if iconState != percent:
-        iconsState = percent
+        iconState = percent
         i = 0
         killid = 0
         os.system(PNGVIEWPATH + "/pngview -b 0 -l 3000" + percent + " -x 650 -y 10 " + ICONPATH + "/battery" + percent + ".png &")
