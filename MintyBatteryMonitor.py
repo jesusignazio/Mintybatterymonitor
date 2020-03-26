@@ -1,10 +1,13 @@
 #!/usr/bin/python
+
 import time
 import os
 import signal
+import board
+import busio
 from subprocess import check_output
-import Adafruit_ADS1x15
-
+import adafruit_ads1x15.ads1015 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 
 # Config
 warning = 0
@@ -21,8 +24,11 @@ VOLT75 = 3.68   # 3.76
 VOLT50 = 3.46   # 3.63
 VOLT25 = 3.35    # 3.5
 VOLT0 = 3.25     # 3.2
-adc = Adafruit_ADS1x15.ADS1015()
 GAIN = 1
+i2c = busio.I2C(board.SCL, board.SDA)
+ads = ADS.ADS1015(i2c)
+chan = AnalogIn(ads, ADS.P0)
+
 
 
 def changeicon(percent):
@@ -47,7 +53,7 @@ def endProcess(signalnum=None, handler=None):
 
 
 def readVoltage():
-    value = adc.read_adc(0, gain=GAIN)
+    value = chan.voltage
     return value
 
 
