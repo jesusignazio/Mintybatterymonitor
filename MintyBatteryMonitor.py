@@ -57,11 +57,6 @@ def readVoltage():
     return value
 
 
-def convertVoltage(sensorValue):
-    voltage = float(sensorValue) * (4.09 / 2047.0)
-    return voltage
-
-
 # Initial Setup
 
 signal.signal(signal.SIGTERM, endProcess)
@@ -89,8 +84,8 @@ if state == 1:
             time.sleep(.4)
             ret3 = readVoltage()
             time.sleep(.4)
-            ret4 = (ret1 + ret2 + ret3) / 3
-            ret = convertVoltage(ret4)
+            ret = (ret1 + ret2 + ret3) / 3
+       
             if debug == 1:
                 print(ret)
             if ret < VOLT0:
@@ -135,8 +130,8 @@ elif state == 0:
             time.sleep(.4)
             ret3 = readVoltage()
             time.sleep(.4)
-            ret4 = (ret1 + ret2 + ret3) / 3
-            ret = convertVoltage(ret4)
+            ret = (ret1 + ret2 + ret3) / 3
+            
             if debug == 1:
                 print(ret)
             if ret < VOLT0:
