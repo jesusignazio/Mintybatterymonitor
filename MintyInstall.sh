@@ -3,6 +3,7 @@
 cd ~
 sudo apt-get update
 sudo apt-get install python3 -y
+sudo apt-get install python3-pip -y
 sudo apt-get install libpng12-dev -y
 sudo apt-get install python3-gpiozero -y
 sudo apt-get install python-pkg-resources python3-pkg-resources -y
