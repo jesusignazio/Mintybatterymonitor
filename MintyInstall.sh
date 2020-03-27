@@ -4,7 +4,7 @@ cd ~
 sudo apt-get update
 sudo apt-get install python3 -y
 sudo apt-get install libpng12-dev -y
-sudo apt-get install python-gpiozero -y
+sudo apt-get install python3-gpiozero -y
 sudo apt-get install python-pkg-resources python3-pkg-resources -y
 sudo apt-get install -y i2c-tools -y
 sudo apt-get install build-essential python-dev python-smbus python-pip -y
