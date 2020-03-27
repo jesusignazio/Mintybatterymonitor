@@ -7,7 +7,7 @@ sudo apt-get install python-gpiozero -y
 sudo apt-get install python-pkg-resources python3-pkg-resources -y
 sudo apt-get install -y i2c-tools -y
 sudo apt-get install build-essential python-dev python-smbus python-pip -y
-sudo pip install adafruit-circuitpython--ads1x15
+sudo pip3 install adafruit-circuitpython--ads1x15
 cd ~
 sudo chmod 755 /home/pi/Mintybatterymonitor/Pngview/pngview
 sudo chmod 755 /home/pi/Mintybatterymonitor/MintyStart.sh
