@@ -39,12 +39,12 @@ def changeicon(percent):
         killid = 0
         os.system(PNGVIEWPATH + "/pngview -b 0 -l 3000" + percent + " -x 650 -y 10 " + ICONPATH + "/battery" + percent + ".png &")
         out = check_output("ps aux | grep pngview | awk '{ print $2 }'", shell=True)
-        nums = out.split('\n')
+        nums = out.split(b'\n')
         for num in nums:
             i += 1
             if i == 1:
                 killid = num
-                os.system("sudo kill " + killid)
+                os.system(b"sudo kill " + killid)
 
 
 def endProcess(signalnum=None, handler=None):
